@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
+ const App = () => {
+
+  let [counter, setCounter] = useState(0);
+
+  let changeCounter = (e) =>{
+    setCounter(
+      counter = e.target.value.length
+    )
+  }
+
     return (
       <div className="container">
-        <textarea rows="3"></textarea>
-        <div className="counter">0</div>
+        <textarea rows="3" onChange={changeCounter}></textarea>
+        <div className="counter">{counter}</div>
       </div>
     );
   }
-}
 
 export default App;
